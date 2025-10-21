@@ -29,6 +29,7 @@ Modular, scalable Node.js + Express backend powering the WishDish restaurant app
 
 ## 📂 Folder Structure
 
+```
 wishdish-api/ 
 ├── routes/
 │ └── menu.js
@@ -37,7 +38,7 @@ wishdish-api/
 ├── app.js 
 ├── .gitignore 
 └── README.md
-
+```
 
 ---
 
