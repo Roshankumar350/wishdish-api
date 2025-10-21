@@ -2,7 +2,7 @@
 
 ![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
 ![Node.js](https://img.shields.io/badge/Node.js-Express-green)  
-Frontend: [WishDish iOS App](https://github.com/Roshankumar350/wishdish-ios)
+Frontend: [WishDish iOS App](https://github.com/Roshankumar350/WishDish)
 
 Modular, scalable Node.js + Express backend powering the WishDish restaurant app — designed for emotionally resonant dining experiences.
 
