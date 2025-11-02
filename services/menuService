@@ -1,0 +1,3 @@
+const menuData = require('../data/menu.json');
+
+exports.fetchMenuData = () => menuData;
