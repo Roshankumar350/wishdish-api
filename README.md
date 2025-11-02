@@ -30,14 +30,23 @@ Modular, scalable Node.js + Express backend powering the WishDish restaurant app
 ## 📂 Folder Structure
 
 ```
-wishdish-api/ 
-├── routes/
-│ └── menu.js
-├── data/
-│ └── menu.json 
-├── app.js 
-├── .gitignore 
-└── README.md
+wishdish-api/
+├── app.js                     # Main entry point
+├── package.json               # Project metadata and dependencies
+├── /routes                    # Route definitions
+│   └── menuRoutes.js
+├── /controllers               # Request handlers
+│   └── menuController.js
+├── /services                  # Business logic and data access
+│   └── menuService.js
+├── /middleware                # Custom middleware
+│   ├── logger.js
+│   └── errorHandler.js
+├── /data                      # Static or mock data
+│   └── menu.json
+├── /tests                     # Unit and integration tests
+│   └── menu.test.js
+
 ```
 
 ---
@@ -55,7 +64,6 @@ Query parameters:
 
 Example:
 GET /api/menu?category=Spicy Adventure&isVegetarian=true&page=1
-
 
 ---
 
