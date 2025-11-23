@@ -1,6 +1,6 @@
-const request = require('supertest');
-const express = require('express');
-const menuRoutes = require('../routes/menuRoutes');
+import request from 'supertest';
+import express, { Request, Response } from 'express';
+import menuRoutes from '../routes/menuRoutes';
 
 const app = express();
 app.use(express.json());
@@ -19,7 +19,7 @@ describe('GET /api/menu', () => {
   test('should filter by category', async () => {
     const res = await request(app).get('/api/menu?category=Main');
     expect(res.statusCode).toBe(200);
-    res.body.items.forEach(item => {
+    res.body.items.forEach((item: any) => {
       expect(item.category).toBe('Main');
     });
   });
@@ -27,7 +27,7 @@ describe('GET /api/menu', () => {
   test('should filter vegetarian items', async () => {
     const res = await request(app).get('/api/menu?isVegetarian=true');
     expect(res.statusCode).toBe(200);
-    res.body.items.forEach(item => {
+    res.body.items.forEach((item: any) => {
       expect(item.is_vegetarian).toBe(true);
     });
   });
