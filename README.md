@@ -20,10 +20,12 @@ Modular, scalable Node.js + Express backend powering the WishDish restaurant app
 
 ## 📦 Tech Stack
 
-- **Node.js** + **Express**
-- JSON-based mock data (`menu.json`)
-- RESTful endpoints
-- GitHub + SSH integration
+- **Node.js** + **Express** — core server framework
+- **TypeScript** — type safety across controllers, services, and middleware
+- **Jest** + **Supertest** — automated testing of endpoints
+- **JSON mock data** (menu.json) — sample menu items
+- **RESTful endpoints**
+- **GitHub + SSH integration** version control and collaboration
 
 ---
 
@@ -31,21 +33,16 @@ Modular, scalable Node.js + Express backend powering the WishDish restaurant app
 
 ```
 wishdish-api/
-├── app.js                     # Main entry point
-├── package.json               # Project metadata and dependencies
-├── /routes                    # Route definitions
-│   └── menuRoutes.js
-├── /controllers               # Request handlers
-│   └── menuController.js
-├── /services                  # Business logic and data access
-│   └── menuService.js
-├── /middleware                # Custom middleware
-│   ├── logger.js
-│   └── errorHandler.js
-├── /data                      # Static or mock data
-│   └── menu.json
-├── /tests                     # Unit and integration tests
-│   └── menu.test.js
+├── app.ts                # Entry point
+├── routes/               # Express routes
+├── controllers/          # Request handlers
+├── services/             # Business logic
+├── types/                # TypeScript interfaces
+├── tests/                # Jest + Supertest test cases
+├── data/menu.json        # Mock menu data
+├── jest.config.js        # Jest configuration
+├── jest.setup.js         # LocalStorage stub for tests
+└── package.json
 
 ```
 
