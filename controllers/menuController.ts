@@ -1,12 +1,34 @@
-const { fetchMenuData } = require('../services/menuService');
+import { Request, Response } from 'express';
+import { fetchMenuData } from '../services/menuService';
+import { MenuItem } from '../types/menuTypes';
 
-exports.getMenuItems = (req, res) => {
+interface MenuQuery {
+  category?: string;
+  isVegetarian?: string; // comes in as string from query
+  isPopular?: string;    // comes in as string from query
+  page?: string;         // query params are always strings
+  limit?: string;
+}
+
+interface MenuResponse {
+  items: MenuItem[];
+  meta: {
+    page: number;
+    limit: number;
+    total: number;
+  };
+}
+
+export const getMenuItems = (
+  req: Request<{}, {}, {}, MenuQuery>,
+  res: Response<MenuResponse>
+) => {
   const {
     category,
     isVegetarian,
     isPopular,
-    page = 1,
-    limit = 50
+    page = '1',
+    limit = '50',
   } = req.query;
 
   let items = fetchMenuData();
@@ -39,7 +61,7 @@ exports.getMenuItems = (req, res) => {
     meta: {
       page: pageNum,
       limit: limitNum,
-      total: items.length
-    }
+      total: items.length,
+    },
   });
 };

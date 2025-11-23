@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "rootDir": "",         // ✅ use "." if everything is in root
+    "outDir": "./dist",
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
+    "strict": true,
+    "target": "ES2020",
+    "module": "commonjs",
+    "forceConsistentCasingInFileNames": true,
+    "skipLibCheck": true
+  },
+  "include": ["."],
+  "exclude": ["node_modules"]
+}
