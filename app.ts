@@ -2,14 +2,13 @@ import express, { Request, Response, NextFunction } from 'express';
 import cors from 'cors';
 import bodyParser from 'body-parser';
 
-import menuRoutes from './routes/menuRoutes';   // ✅ import your router
-import { logger } from './middleware/logger';   // optional if you want logging
-import { errorHandler } from './middleware/errorHandler'; // optional if you have it
-
+import menuRoutes from './routes/menuRoutes';  
+import { logger } from './middleware/logger';   
+import { errorHandler } from './middleware/errorHandler'; 
 const app = express();
 app.use(cors());
 app.use(bodyParser.json());
-app.use(logger); // ✅ middleware
+app.use(logger);
 
 // Health check
 app.get('/', (req: Request, res: Response) => {
@@ -17,7 +16,7 @@ app.get('/', (req: Request, res: Response) => {
 });
 
 // Routes
-app.use('/api/menu', menuRoutes); // ✅ mount your menu routes
+app.use('/api/menu', menuRoutes); 
 
 // 404 fallback
 app.use((req: Request, res: Response) => {

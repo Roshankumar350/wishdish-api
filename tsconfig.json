@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "rootDir": "",         // ✅ use "." if everything is in root
+    "rootDir": "",         
     "outDir": "./dist",
     "resolveJsonModule": true,
     "esModuleInterop": true,
